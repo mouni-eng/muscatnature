@@ -21,19 +21,19 @@ class OnBoardingCubit extends Cubit<OnBoardingStates> {
 
   List<OnBoardingModel> onBoardingList = [
     OnBoardingModel(
-      title: "Welcome to Muscat Nature",
+      title: "Muscat Nature",
       image: "assets/img/welcome.svg",
       subTitle:
           "Muscat Nature is a domestic, inbound tour company, located in Muscat, Oman, established in 2007 .",
     ),
     OnBoardingModel(
-      title: "Book Online Private Tours!",
+      title: "Online Ticket Booking",
       image: "assets/img/trip.svg",
       subTitle:
           "On the edge of the Arabian Peninsula, the state of Oman boasts lush wadis, diverse markets and rich culture.",
     ),
     OnBoardingModel(
-      title: "Book Your Professional Driver!",
+      title: "Book Your Driver!",
       image: "assets/img/driver.svg",
       subTitle:
           "Start your Oman vacation with confidence and free of stress knowing that a private driver will be waiting for you.",

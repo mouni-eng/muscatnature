@@ -31,7 +31,8 @@ class CustomButton extends StatelessWidget {
     this.svgLeadingIcon,
     this.showLoader = false,
     this.btnHeight = 48,
-    this.enabled = true, this.fontWeight,
+    this.enabled = true,
+    this.fontWeight,
   }) : super(key: key);
 
   @override
@@ -94,5 +95,40 @@ class CustomButton extends StatelessWidget {
         fontSize: fontSize!,
       ),
     ));
+  }
+}
+
+class CustomNextButton extends StatelessWidget {
+  const CustomNextButton({Key? key, this.background, required this.function})
+      : super(key: key);
+
+  final Color? background;
+  final void Function() function;
+
+  @override
+  Widget build(BuildContext context) {
+    return RentXWidget(builder: (rentxcontext) {
+      var bgColor = rentxcontext.theme.customTheme;
+      return Container(
+        width: width(45),
+        height: height(45),
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: background ?? bgColor.secondary,
+        ),
+        child: MaterialButton(
+          padding: EdgeInsets.zero,
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          onPressed: function,
+          child: Center(
+            child: Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: bgColor.onPrimary,
+              size: 16,
+            ),
+          ),
+        ),
+      );
+    });
   }
 }

@@ -47,6 +47,20 @@ class OnBoardingScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            TextButton(
+                                onPressed: () {
+                                  cubit.onNextStep();
+                                },
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.zero,
+                                  tapTargetSize:
+                                      MaterialTapTargetSize.shrinkWrap,
+                                ),
+                                child: CustomText(
+                                  fontSize: width(18),
+                                  color: color.secondary,
+                                  text: "Skip",
+                                )),
                             SmoothPageIndicator(
                               controller: cubit.controller,
                               count: 3,
@@ -60,27 +74,18 @@ class OnBoardingScreen extends StatelessWidget {
                               ),
                             ),
                             if (cubit.index != 2)
-                              TextButton(
-                                  onPressed: () {
-                                    cubit.onNextStep();
-                                  },
-                                  style: TextButton.styleFrom(
-                                    padding: EdgeInsets.zero,
-                                    tapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                  ),
-                                  child: CustomText(
-                                    fontSize: width(18),
-                                    color: color.secondary,
-                                    text: "Next",
-                                  )),
+                              CustomNextButton(
+                                function: () {
+                                  cubit.onNextStep();
+                                },
+                              ),
                             if (cubit.index == 2)
                               CustomButton(
-                                btnHeight: height(40),
-                                btnWidth: width(150),
-                                fontSize: width(18),
+                                btnHeight: height(50),
+                                btnWidth: width(86),
+                                fontSize: width(15),
                                 background: color.secondary,
-                                radius: 8,
+                                radius: 5,
                                 fontWeight: FontWeight.w400,
                                 function: () {
                                   if (cubit.index != 2) {
@@ -90,7 +95,7 @@ class OnBoardingScreen extends StatelessWidget {
 
                                   }
                                 },
-                                text: "Get started",
+                                text: "GO!",
                               ),
                           ],
                         )

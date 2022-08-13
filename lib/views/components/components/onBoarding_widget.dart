@@ -20,20 +20,26 @@ class OnBoardingBuilder extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: height(100),
+            height: height(50),
           ),
           Center(
-            child: SvgPicture.asset(
-              model.image!,
-              width: width(300),
-              height: height(300),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: const Color(0xFFFFF2E8),
+              ),
+              child: SvgPicture.asset(
+                model.image!,
+                width: width(350),
+                height: height(405),
+              ),
             ),
           ),
           SizedBox(
-            height: height(50),
+            height: height(67),
           ),
           CustomText(
-            fontSize: width(20),
+            fontSize: width(24),
             text: model.title!,
             fontWeight: FontWeight.w600,
             color: rentxcontext.theme.customTheme.headline,
@@ -43,8 +49,8 @@ class OnBoardingBuilder extends StatelessWidget {
           ),
           CustomText(
             fontSize: width(16),
-            maxlines: 5,
-            height: 1.4,
+            maxlines: 3,
+            height: 1.3,
             text: model.subTitle!,
             color: rentxcontext.theme.customTheme.headline3,
           ),
